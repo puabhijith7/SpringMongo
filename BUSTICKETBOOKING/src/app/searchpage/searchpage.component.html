@@ -1,0 +1,212 @@
+<!-- <div class="container">
+    <h2>Search Bus</h2>
+    <form>
+      <div class="form-group">
+        <label for="from">From:</label>
+        <select id="from" name="from">
+          <option value="city1">City 1</option>
+          <option value="city2">City 2</option>
+          <option value="city3">City 3</option>
+          
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="to">To:</label>
+        <select id="to" name="to">
+          <option value="city1">City 1</option>
+          <option value="city2">City 2</option>
+          <option value="city3">City 3</option>
+         
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Search" routerLink="/seatavailability">
+      </div>
+    </form>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tbl">
+  <br>
+  <br>
+ <!-- <div style="align-items: center; margin-top: 25vh;"><h1 style="font-family: 'Roboto', sans-serif;; font-style: italic;font: optional; font-size:xx-large;color: rgb(243, 193, 175);"> Welcome to the Go Bus and Book Your Ticket Now</h1></div>  -->
+  
+   
+  <div class="container">
+
+    <div class="input-group">
+
+      <select class="form-control" id="from"[(ngModel)]="textbox2">
+
+       
+
+        <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
+
+        <!-- <option value="location2">Kollam</option>
+
+        <option value="location3">Trivandrum</option> -->
+
+      </select>
+
+    </div>
+
+    <div class="input-group">
+
+      <select class="form-control" id="to"  [(ngModel)]="textbox3">
+
+        
+
+        <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
+
+        <!-- <option value="location2">Palakkad</option>
+
+        <option value="location3">Malappuram</option> -->
+
+      </select>
+
+    </div>
+
+    <div class="input-group">
+
+      <input type="date" class="form-control" id="date" [(ngModel)]="textbox1" placeholder="yyyy-mm-dd">
+
+    </div>
+
+    <button class="btn btn-primary search-button"  (click)="search()" (click)="searchbus()"(click)="getfare()">Search</button>
+<div style="font-weight: bold;" class="error-message">{{ errorMessage }}
+</div>
+ 
+  </div>
+
+
+
+
+  <div *ngIf="schedules.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th >Date</th>
+          <th >Departure Time</th>
+          <th >Arrival Time</th>
+          <th >Bus No</th>
+          <th >Bus Name</th>
+          <th >Bus Type</th>
+          <th >Total Seats</th>
+          <th >Fare</th>
+          <th>Book Now</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule of schedules; let i = index">
+          <td>{{ schedule.date }}</td>
+          <td>{{ schedule.departureTime }}</td>
+          <td>{{ schedule.arrivalTime }}</td>
+          <td>{{ busDto[i].busNo }}</td>
+          <td>{{ busDto[i].busName }}</td>
+          <td>{{ busDto[i].busType }}</td>
+          <td>{{ busDto[i].totalSeats }}</td>
+          <td>{{ fare[i] }}</td>
+         
+          <td><button type="submit" (click)="getseats(schedule.scheduleId)"(click)="setfare(fare[i])"(click)="set()" routerLink="/seats">VIEW SEATS</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <!-- <div class="container2">
+
+      <div class="card">
+  
+        <div class="card-body">
+  
+          <div class="bus-details" *ngFor="let schedule of schedules; let i = index">
+  
+            <div class="row">
+  
+              <div class="col" >
+  
+                <p><strong class="bus-number">No. {{ busDto[i].busNo }}</strong></p>
+  
+                <p><strong style="font-size: 2.0rem;">{{ busDto[i].busName }}</strong></p>
+  
+                <div class="row">
+  
+                  <div class="col">
+  
+                    <p><i class="fas fa-snowflake"></i> {{ busDto[i].busType }}</p>
+  
+                    <p>
+  
+                      <i class="fas fa-wifi"></i>
+  
+                      <br>
+  
+                     
+  
+                    </p>
+  
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+              <div class="col date">
+  
+                <p><strong>Departure:</strong> {{ schedule.departureTime }}</p>
+  
+                <p><strong>Arrival:</strong> {{ schedule.arrivalTime }}</p>
+  
+              </div>
+  
+              <div class="col date date-column">
+  
+                <p><strong>Date:</strong> {{ schedule.date }}</p>
+  
+              </div>
+  
+              <div class="col price">
+  
+                <p class="amount"><strong>$ {{ fare[i] }}</strong></p>
+  
+                <p><strong>Seats:</strong> {{ busDto[i].totalSeats }}</p>
+  
+                <button class="btn btn-sm btn-primary"  (click)="getseats(schedule.scheduleId)"(click)="setfare(fare[i])"(click)="set()" routerLink="/seats">View Seats</button>
+  
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+    </div> -->
+
+
+
+  
+</div>
+
+
+

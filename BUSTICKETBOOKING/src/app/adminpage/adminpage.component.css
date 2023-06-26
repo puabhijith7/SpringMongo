@@ -1,0 +1,29 @@
+.background-container {
+    background-color:aliceblue;
+    background-size: cover;
+    height: 100% ;/* Adjust the height as per your requirement */
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-container {
+    display: flex;
+  }
+  
+  button {
+    width: 150px; /* Adjust the width as desired */
+    height: 150px; /* Adjust the height as desired */
+    padding: 25px 40px; /* Updated padding for larger size */
+    margin: 0 5px;
+    background-color: #ae8ca3;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px; /* Increased font size for larger text */
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+  }
+ 
+  
