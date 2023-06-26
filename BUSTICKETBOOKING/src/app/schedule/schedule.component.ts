@@ -23,7 +23,7 @@ addschedule(){
       response => {
         console.log(response);
        
-        this.router.navigate(['/adminhomepage']);
+        // this.router.navigate(['/adminhomepage']);
       }
       );
      

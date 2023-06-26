@@ -16,6 +16,7 @@ export class AddbusComponent {
 	busType:string='';
 	busName:string='';
 	totalSeats!:number;
+  errorMessage: string='';
   
   constructor(private service:ServiceService,private router: Router) { }
 addbus(){
@@ -26,9 +27,13 @@ addbus(){
         console.log(response);
         console.log("bus added")
         this.router.navigate(['/adminhomepage']);
+      },
+      (error) => {
+        console.error(error);
+        this.errorMessage = "BUS-ID ALREADY EXIST";
       }
       );
-      alert("Bus Added")
+     
     }
 
 }

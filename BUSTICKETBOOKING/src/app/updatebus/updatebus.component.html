@@ -35,8 +35,10 @@
 
                 <label for="bus-id">Bus ID</label>
 
-                <input type="text" [(ngModel)]="busId" class="form-control" id="bus-id">
-
+                <!-- <input type="text" [(ngModel)]="busId" class="form-control" id="bus-id"> -->
+                <select id="bus-id" [(ngModel)]="busId" class="form-control" (change)="onDropdownChange()">
+                  <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
+                </select>
               </div>
 
               <div class="form-group col-md-6">
@@ -101,7 +103,7 @@
 
             </div>
 
-
+       
 
 
             <div class="text-center">

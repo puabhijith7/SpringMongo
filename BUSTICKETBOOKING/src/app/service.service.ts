@@ -35,6 +35,9 @@ export class ServiceService {
     this.updateUrl="http://localhost:8081/api/v1/buses/bus";
     this.addscheduleUrl="http://localhost:8082/api/v1/schedules/schedule/post"
    }
+   getDropdownValuesbus(): Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:8081/api/v1/buses/bus');
+  }
     
     getDropdownValues(): Observable<string[]> {
       return this.http.get<string[]>('http://localhost:8081/api/v1/buses/routeDetails/all');
